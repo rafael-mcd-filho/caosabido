@@ -4,8 +4,9 @@ import { Card, CardContent } from '@/components/ui/card.jsx'
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion.jsx'
 import { MapPin, Phone, Clock, Star, Heart, Shield, Zap, Users, CheckCircle, ChevronLeft, ChevronRight, Instagram, Menu, X, Home, PlayCircle } from 'lucide-react'
 import LazyVideo from "@/components/ui/lazy-video.jsx"
-import caoSabidoLogo from './assets/cao-sabido.png'
 import './App.css'
+
+const caoSabidoLogo = '/cao-sabido.png'
 
 function WhatsAppIcon({ className = "" }) {
   return (
@@ -490,26 +491,13 @@ function App() {
                   playsInline
                   preload="metadata"  // só puxa cabeçalho e inicia rápido
                   className="w-full h-full object-cover object-[center_60%]"
-                  poster="/video-cover-hero.jpg"  // gere uma imagem leve (webp/avif)
                 >
                   {/* fontes alternativas: mobile carrega 480p, desktop 720p */}
-                  <source src="/videos/presentation-480.mp4" type="video/mp4" media="(max-width: 640px)" />
+                  <source src="/videos/presentation.mp4" type="video/mp4" media="(max-width: 640px)" />
                   <source src="/videos/presentation-720.mp4" type="video/mp4" media="(max-width: 1280px)" />
                   <source src="/videos/presentation.mp4" type="video/mp4" />
                   Seu navegador não suporta vídeos.
                 </video>
-
-                {/* <video
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  className="w-full h-full object-cover object-[center_60%]"
-                  poster="/videos/dogs-hotel.mp4"
-                >
-                  <source src="/videos/presentation.mp4" type="video/mp4" />
-                  Seu navegador não suporta vídeos.
-                </video> */}
               </div>
             </div>
           </div>
@@ -710,7 +698,6 @@ function App() {
             <Card className="w-full max-w-sm mx-auto overflow-hidden hover:shadow-xl transition-all duration-300 md:max-w-none">
               <LazyVideo
                 sources={[
-                  // { src: "/videos/dogs-hotel-480.mp4", label: "480p" },
                   { src: "/videos/dogs-hotel.mp4", label: "720p" },
                 ]}
                 aspectRatio="aspect-[4/5]"
@@ -723,42 +710,9 @@ function App() {
               </CardContent>
             </Card>
 
-
-
-            {/* <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 group">
-              <div className="relative">
-                <img 
-  loading="eager"
-  decoding="async" 
-                  src="/video-cover-1.jpg"
-                  alt="Diversão na Creche"
-                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300"></div>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <div className="w-0 h-0 border-l-[16px] border-l-amber-600 border-t-[12px] border-t-transparent border-b-[12px] border-b-transparent ml-1"></div>
-                  </div>
-                </div>
-                <video
-                  controls
-                  muted
-                  className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                  poster="/video-cover-1.jpg"
-                >
-                  <source src="/videos/dogs-hotel.mp4" type="video/mp4" />
-                </video>
-              </div>
-              <CardContent className="p-6">
-                <h3 className="text-xl font-semibold text-amber-900 mb-3">Diversão na Creche</h3>
-                <p className="text-gray-600">Veja nossos peludinhos se divertindo em um ambiente seguro e estimulante, com atividades supervisionadas e muito carinho.</p>
-              </CardContent>
-            </Card> */}
-
             <Card className="w-full max-w-sm mx-auto overflow-hidden hover:shadow-xl transition-all duration-300 md:max-w-none">
               <LazyVideo
                 sources={[
-                  // { src: "/videos/dogs-hotel-480.mp4", label: "480p" },
                   { src: "/videos/training.mp4", label: "720p" },
                 ]}
                 aspectRatio="aspect-[4/5]"
@@ -771,40 +725,9 @@ function App() {
               </CardContent>
             </Card>
 
-            {/* <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 group">
-              <div className="relative">
-                <img 
-  loading="eager"
-  decoding="async" 
-                  src="/video-cover-2.jpg"
-                  alt="Treinamento Profissional"
-                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300"></div>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <div className="w-0 h-0 border-l-[16px] border-l-amber-600 border-t-[12px] border-t-transparent border-b-[12px] border-b-transparent ml-1"></div>
-                  </div>
-                </div>
-                <video
-                  controls
-                  muted
-                  className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                  poster="/video-cover-2.jpg"
-                >
-                  <source src="/videos/training.mp4" type="video/mp4" />
-                </video>
-              </div>
-              <CardContent className="p-6">
-                <h3 className="text-xl font-semibold text-amber-900 mb-3">Treinamento Profissional</h3>
-                <p className="text-gray-600">Nossos adestradores trabalham com técnicas modernas e humanizadas para o desenvolvimento comportamental.</p>
-              </CardContent>
-            </Card> */}
-
             <Card className="w-full max-w-sm mx-auto overflow-hidden hover:shadow-xl transition-all duration-300 md:max-w-none">
               <LazyVideo
                 sources={[
-                  // { src: "/videos/dogs-hotel-480.mp4", label: "480p" },
                   { src: "/videos/presentation.mp4", label: "720p" },
                 ]}
                 aspectRatio="aspect-[4/5]"
@@ -816,36 +739,6 @@ function App() {
                 <p className="text-gray-600">Conheça nossos ambientes climatizados, playground especial e toda infraestrutura pensada para o bem-estar.</p>
               </CardContent>
             </Card>
-
-            {/* <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 group">
-              <div className="relative">
-                <img 
-  loading="eager"
-  decoding="async" 
-                  src="/video-cover-3.jpg"
-                  alt="Tour pelas Instalações"
-                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300"></div>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <div className="w-0 h-0 border-l-[16px] border-l-amber-600 border-t-[12px] border-t-transparent border-b-[12px] border-b-transparent ml-1"></div>
-                  </div>
-                </div>
-                <video
-                  controls
-                  muted
-                  className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                  poster="/video-cover-3.jpg"
-                >
-                  <source src="/videos/presentation.mp4" type="video/mp4" />
-                </video>
-              </div>
-              <CardContent className="p-6">
-                <h3 className="text-xl font-semibold text-amber-900 mb-3">Tour pelas Instalações</h3>
-                <p className="text-gray-600">Conheça nossos ambientes climatizados, playground especial e toda infraestrutura pensada para o bem-estar.</p>
-              </CardContent>
-            </Card> */}
           </div>
         </div>
       </section>
