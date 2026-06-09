@@ -30,6 +30,15 @@ function AnimatedWhatsAppButton({
   variant = "solid",
   className = "",
 }) {
+  const handleClick = () => {
+    window.dataLayer = window.dataLayer || []
+    window.dataLayer.push({
+      event: "whatsapp_click",
+      cta_id: dataCta,
+      cta_text: typeof children === "string" ? children : undefined,
+    })
+  }
+
   return (
     <Button
       asChild
@@ -42,6 +51,7 @@ function AnimatedWhatsAppButton({
         target="_blank"
         rel="noopener noreferrer"
         data-cta={dataCta}
+        onClick={handleClick}
       >
         <span className="animated-pill-text">{children}</span>
         <span className="animated-pill-circle">
