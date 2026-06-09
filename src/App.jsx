@@ -1226,6 +1226,7 @@ function App() {
                 rel="noopener noreferrer"
                 data-cta="whatsapp-floating-tooltip"
                 className="absolute bottom-16 right-0 mb-3 block w-[260px] rounded-2xl bg-white px-4 py-3 text-gray-800 shadow-xl ring-1 ring-black/5 transition-transform duration-200 hover:-translate-y-1"
+                onClick={() => { window.dataLayer = window.dataLayer || []; window.dataLayer.push({ event: "whatsapp_click", cta_id: "whatsapp-floating-tooltip" }) }}
               >
                 <span className="block text-sm font-semibold leading-snug">
                   Tem alguma dúvida?
@@ -1247,6 +1248,7 @@ function App() {
                 rel="noopener noreferrer"
                 data-cta="whatsapp-floating"
                 aria-label="Falar no WhatsApp"
+                onClick={() => { window.dataLayer = window.dataLayer || []; window.dataLayer.push({ event: "whatsapp_click", cta_id: "whatsapp-floating" }) }}
               >
                 <WhatsAppIcon className="h-7 w-7" />
               </a>
